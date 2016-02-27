@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0A66A4111C819C2000E7D8E6"
+               BuildableName = "BlockInspectorTest.app"
+               BlueprintName = "BlockInspectorTest"
+               ReferencedContainer = "container:BlockInspectorTest.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0A66A42A1C819C2000E7D8E6"
+               BuildableName = "BlockInspectorTestTests.xctest"
+               BlueprintName = "BlockInspectorTestTests"
+               ReferencedContainer = "container:BlockInspectorTest.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0A66A4351C819C2000E7D8E6"
+               BuildableName = "BlockInspectorTestUITests.xctest"
+               BlueprintName = "BlockInspectorTestUITests"
+               ReferencedContainer = "container:BlockInspectorTest.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "0A66A4111C819C2000E7D8E6"
+            BuildableName = "BlockInspectorTest.app"
+            BlueprintName = "BlockInspectorTest"
+            ReferencedContainer = "container:BlockInspectorTest.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "0A66A4111C819C2000E7D8E6"
+            BuildableName = "BlockInspectorTest.app"
+            BlueprintName = "BlockInspectorTest"
+            ReferencedContainer = "container:BlockInspectorTest.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "0A66A4111C819C2000E7D8E6"
+            BuildableName = "BlockInspectorTest.app"
+            BlueprintName = "BlockInspectorTest"
+            ReferencedContainer = "container:BlockInspectorTest.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

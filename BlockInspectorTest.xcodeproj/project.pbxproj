@@ -15,6 +15,8 @@
 		0A66A4251C819C2000E7D8E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A66A4231C819C2000E7D8E6 /* LaunchScreen.storyboard */; };
 		0A66A4301C819C2000E7D8E6 /* BlockInspectorTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A66A42F1C819C2000E7D8E6 /* BlockInspectorTestTests.m */; };
 		0A66A43B1C819C2000E7D8E6 /* BlockInspectorTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A66A43A1C819C2000E7D8E6 /* BlockInspectorTestUITests.m */; };
+		0A66A44B1C819C9000E7D8E6 /* fishhook.c in Sources */ = {isa = PBXBuildFile; fileRef = 0A66A4491C819C9000E7D8E6 /* fishhook.c */; };
+		0A66A44E1C819C9F00E7D8E6 /* BlockInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A66A44D1C819C9F00E7D8E6 /* BlockInspector.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,10 @@
 		0A66A4361C819C2000E7D8E6 /* BlockInspectorTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlockInspectorTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A66A43A1C819C2000E7D8E6 /* BlockInspectorTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockInspectorTestUITests.m; sourceTree = "<group>"; };
 		0A66A43C1C819C2000E7D8E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A66A4491C819C9000E7D8E6 /* fishhook.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = fishhook.c; sourceTree = "<group>"; };
+		0A66A44A1C819C9000E7D8E6 /* fishhook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fishhook.h; sourceTree = "<group>"; };
+		0A66A44C1C819C9F00E7D8E6 /* BlockInspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockInspector.h; sourceTree = "<group>"; };
+		0A66A44D1C819C9F00E7D8E6 /* BlockInspector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockInspector.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 		0A66A4141C819C2000E7D8E6 /* BlockInspectorTest */ = {
 			isa = PBXGroup;
 			children = (
+				0A66A4481C819C7B00E7D8E6 /* BlockIspector */,
 				0A66A4181C819C2000E7D8E6 /* AppDelegate.h */,
 				0A66A4191C819C2000E7D8E6 /* AppDelegate.m */,
 				0A66A41B1C819C2000E7D8E6 /* ViewController.h */,
@@ -138,6 +145,17 @@
 				0A66A43C1C819C2000E7D8E6 /* Info.plist */,
 			);
 			path = BlockInspectorTestUITests;
+			sourceTree = "<group>";
+		};
+		0A66A4481C819C7B00E7D8E6 /* BlockIspector */ = {
+			isa = PBXGroup;
+			children = (
+				0A66A44C1C819C9F00E7D8E6 /* BlockInspector.h */,
+				0A66A44D1C819C9F00E7D8E6 /* BlockInspector.m */,
+				0A66A4491C819C9000E7D8E6 /* fishhook.c */,
+				0A66A44A1C819C9000E7D8E6 /* fishhook.h */,
+			);
+			name = BlockIspector;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +289,8 @@
 			files = (
 				0A66A41D1C819C2000E7D8E6 /* ViewController.m in Sources */,
 				0A66A41A1C819C2000E7D8E6 /* AppDelegate.m in Sources */,
+				0A66A44E1C819C9F00E7D8E6 /* BlockInspector.m in Sources */,
+				0A66A44B1C819C9000E7D8E6 /* fishhook.c in Sources */,
 				0A66A4171C819C2000E7D8E6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

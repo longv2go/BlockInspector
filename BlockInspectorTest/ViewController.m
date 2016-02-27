@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "BlockInspector.h"
 
 @interface ViewController ()
 
@@ -17,6 +18,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    
+    id cap1 = @"hello world!";
+    id cap2 = @[@"arr1", @"arr2"];
+    
+    void (^blk)(void) = ^{
+        id b1 = cap1;
+        id b2 = cap2;
+    };
+    
+    [BlockInspector inspectBlock:blk];
 }
 
 - (void)didReceiveMemoryWarning {
