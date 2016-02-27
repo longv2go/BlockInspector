@@ -23,10 +23,12 @@
     id cap1 = @"hello world!";
     id cap2 = @[@"arr1", @"arr2"];
     id obj = @"not captured";
+    __weak id obj2 = @"not captured 2";
     
     void (^blk)(void) = ^{
         id b1 = cap1;
         id b2 = cap2;
+        id b3 = obj2;
     };
     
     [BlockInspector inspectBlock:blk];
