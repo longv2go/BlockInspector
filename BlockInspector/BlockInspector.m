@@ -73,7 +73,7 @@ void bind_block_dispose()
 void unbind_block_dispose()
 {
     rebind_symbols((struct rebinding[1]){{"_Block_object_dispose", orig_dispose, NULL}}, 1);
-    rebind_symbols((struct rebinding[1]){{"objc_storeStrong", my_storeStrong, NULL}}, 1);
+    rebind_symbols((struct rebinding[1]){{"objc_storeStrong", orig_storeStrong, NULL}}, 1);
 }
 
 @implementation BlockInspector
