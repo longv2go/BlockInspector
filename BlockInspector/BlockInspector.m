@@ -124,6 +124,11 @@ void unbind_block_dispose()
         __capture_objects = CFArrayCreateMutable(0, 10, NULL);
     }
     
+    if (!self.dispose_helper) {
+        NSLog(@"have no capture objects");
+        return;
+    }
+    
     bind_block_dispose();
     
     [self invokeDisposeHelper];
