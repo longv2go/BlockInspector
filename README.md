@@ -26,7 +26,6 @@ Output:
         arr2
     )
 )
-
 ```
 
 #Thanks
