@@ -16,5 +16,18 @@ Drag the BlockIspector.m and other files to your project.
     [BlockInspector inspectBlock:blk];
 ```
 
+Output:
+
+```
+2016-02-27 17:22:51.069 BlockInspectorTest[10158:390353] all capture objects : (
+    "hello world!",
+        (
+        arr1,
+        arr2
+    )
+)
+
+```
+
 #Thanks
 [fishhook:](https://github.com/facebook/fishhook) A library that enables dynamically rebinding symbols in Mach-O binaries running on iOS
