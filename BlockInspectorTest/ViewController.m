@@ -22,6 +22,7 @@
     
     id cap1 = @"hello world!";
     id cap2 = @[@"arr1", @"arr2"];
+    id obj = @"not captured";
     
     void (^blk)(void) = ^{
         id b1 = cap1;
