@@ -10,9 +10,7 @@ enum {
     BLOCK_FIELD_IS_OBJECT   =  3,  // id, NSObject, __attribute__((NSObject)), block, ...
     BLOCK_FIELD_IS_BLOCK    =  7,  // a block variable
     BLOCK_FIELD_IS_BYREF    =  8,  // the on stack structure holding the __block variable
-    
-    BLOCK_FIELD_IS_WEAK     = 16,  // declared __weak
-    
+    BLOCK_FIELD_IS_WEAK     = 16,  // declared __weak, only used in byref copy helpers
     BLOCK_BYREF_CALLER      = 128, // called from byref copy/dispose helpers
 };
 
@@ -41,6 +39,25 @@ struct Block_literal_1 {
     // imported variables
 };
 
+struct Block_byref {
+    void *isa;
+    struct Block_byref *forwarding;
+    volatile int flags; // contains ref count
+    unsigned int size;
+    void (*byref_keep)(struct Block_byref *dst, struct Block_byref *src);
+    void (*byref_destroy)(struct Block_byref *);
+    long shared[0];
+};
+
+
+void * _get_block_byref_destroy(struct Block_byref *bf)
+{
+    if (bf->flags & BLOCK_HAS_COPY_DISPOSE) {
+        return bf->byref_destroy;
+    }
+    return NULL;
+}
+
 
 static CFMutableArrayRef __capture_objects;
 
@@ -49,15 +66,28 @@ static void (*orig_storeStrong)(id *location, id obj);
 static void (*orig_dispose)(void *, int);
 
 void my_dispose_helper(void *this, int fd) {
+    
+    if (fd & BLOCK_FIELD_IS_WEAK) return;
+    
     if (fd & BLOCK_FIELD_IS_BLOCK || fd & BLOCK_FIELD_IS_OBJECT) {
         CFArrayAppendValue(__capture_objects, this);
     }
+    
+    if (fd & BLOCK_FIELD_IS_BYREF) {
+        void (*byref_destroy)(struct Block_byref *) = _get_block_byref_destroy(this);
+        if (byref_destroy) {
+            byref_destroy(this);
+        }
+    }
+    
     return;
 }
 
 void my_storeStrong(void* *location, void* obj)
 {
-    CFArrayAppendValue(__capture_objects, (void *)*location);
+    if (obj == nil) {
+        CFArrayAppendValue(__capture_objects, (void *)*location);
+    }
     return;
 }
 
@@ -130,9 +160,7 @@ void unbind_block_dispose()
     }
     
     bind_block_dispose();
-    
     [self invokeDisposeHelper];
-    
     unbind_block_dispose();
     
     NSLog(@"all capture objects : %@", (__bridge NSArray *)__capture_objects);
