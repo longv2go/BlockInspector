@@ -135,7 +135,7 @@ void unbind_block_dispose()
     
     unbind_block_dispose();
     
-    NSLog(@"all capture objects : %@", (__bridge NSString *)__capture_objects);
+    NSLog(@"all capture objects : %@", (__bridge NSArray *)__capture_objects);
     CFArrayRemoveAllValues(__capture_objects);
 }
 
