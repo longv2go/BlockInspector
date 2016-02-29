@@ -33,8 +33,5 @@ Output:
 #Block internal
 [block reference](http://clang.llvm.org/docs/Block-ABI-Apple.html)
 
-#Note
-Not support __block variables
-
 #Thanks
 [fishhook:](https://github.com/facebook/fishhook) A library that enables dynamically rebinding symbols in Mach-O binaries running on iOS
